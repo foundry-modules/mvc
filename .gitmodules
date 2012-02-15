@@ -1,24 +1,24 @@
 [submodule "documentjs"]
 	path = documentjs
-	url = git://github.com/jupiterjs/documentjs.git
+	url = git@github.com:foundry-modules/documentjs.git
 [submodule "funcunit"]
 	path = funcunit
-	url = git://github.com/jupiterjs/funcunit.git
+	url = git@github.com:foundry-modules/funcunit.git
 [submodule "jquery"]
 	path = jquery
-	url = git://github.com/jupiterjs/jquerymx.git
+	url = git@github.com:foundry-modules/jquerymx.git
 [submodule "steal"]
 	path = steal
-	url = git://github.com/jupiterjs/steal.git
+	url = git@github.com:foundry-modules/steal.git
 [submodule "mxui"]
 	path = mxui
-	url = git://github.com/jupiterjs/mxui.git
+	url = git@github.com:foundry-modules/mxui.git
 [submodule "envjs"]
 	path = envjs
-	url = git://github.com/jupiterjs/env-js.git
+	url = git@github.com:foundry-modules/env-js.git
 [submodule "mxutil"]
 	path = mxutil
-	url = git://github.com/jupiterjs/mxutil.git
+	url = git@github.com:foundry-modules/mxutil.git
 [submodule "funcit"]
 	path = funcit
-	url = git://github.com/jupiterjs/funcit.git
+	url = git@github.com:foundry-modules/funcit.git
