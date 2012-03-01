@@ -1,6 +1,6 @@
-SRC_DIR = jquery/dist/modules/mvc
-PRODUCTION_DIR = "../../scripts/mvc"
-DEVELOPMENT_DIR = "../../scripts_/mvc"
+include ../../build/modules.mk
+
+SOURCE_DIR = jquery/dist/modules/mvc
 
 MODULES = class\
 	controller\
@@ -57,15 +57,14 @@ MODULES = class\
 	lang.string.rsplit
 
 all:
-	@@./js jquery/buildModule.js
-	@@mkdir -p "../../scripts/mvc"
-	@@mkdir -p "../../scripts_/mvc"
+	./js jquery/buildModule.js
 
-	@- $(foreach MODULE,$(MODULES), \
-		echo "Copying" $(MODULE); \
-		cp ${SRC_DIR}/$(MODULE).js ${DEVELOPMENT_DIR}; \
-		echo "Minifying" $(MODULE); \
-		uglifyjs --unsafe ${SRC_DIR}/$(MODULE).js > ${PRODUCTION_DIR}/$(MODULE).js; \
+	mkdir -p ${DEVELOPMENT_DIR}/mvc
+	mkdir -p ${PRODUCTION_DIR}/mvc
+
+	$(foreach MODULE,$(MODULES), \
+		cat ${SOURCE_DIR}/$(MODULE).js | ${RESOLVE_NAMESPACE} > ${DEVELOPMENT_DIR}/mvc/$(MODULE).js;${\n} \
+		${UGLIFYJS} ${DEVELOPMENT_DIR}/mvc/$(MODULE).js > ${PRODUCTION_DIR}/mvc/$(MODULE).js;${\n} \
     )
 
 	@@echo "Module mvc build complete."
