@@ -2,69 +2,41 @@ include ../../build/modules.mk
 
 SOURCE_DIR = jquery/dist/modules/mvc
 
-MODULES = class\
-	controller\
-	controller.route\
-	controller.subscribe\
-	controller.view\
-	dom.closest\
-	dom.compare\
-	dom.cookie\
-	dom.cur_styles\
-	dom.dimensions\
-	dom.fixture\
-	dom.form_params\
-	dom.range\
-	dom.route\
-	dom.selection\
-	dom.within\
-	event.default\
-	event.destroyed\
-	event.drag\
-	event.drag.limit\
-	event.drag.scroll\
-	event.drag.step\
-	event.drop\
-	event.handle\
-	event.hashchange\
-	event.hover\
-	event.key\
-	event.pause\
-	event.resize\
-	event.selection\
-	model\
-	model.backup\
-	model.list\
-	model.list.cookie\
-	model.list.local\
-	model.service\
-	model.service.json_rest\
-	model.service.twitter\
-	model.service.yql\
-	model.store\
-	model.validations\
-	tie\
-	view\
-	view.ejs\
-	view.helpers\
-	lang.string\
-	lang.observe\
-	lang.string.deparam\
-	lang.openajax\
-	lang.json\
-	lang.object\
-	lang.vector\
-	lang.string.rsplit
+MODULES = ${SOURCE_DIR}/lang.string.js\
+${SOURCE_DIR}/lang.string.rsplit.js\
+${SOURCE_DIR}/lang.string.deparam.js\
+${SOURCE_DIR}/lang.observe.js\
+${SOURCE_DIR}/event.default.js\
+${SOURCE_DIR}/event.destroyed.js\
+${SOURCE_DIR}/event.hashchange.js\
+${SOURCE_DIR}/event.key.js\
+${SOURCE_DIR}/event.livehack.js\
+${SOURCE_DIR}/event.pause.js\
+${SOURCE_DIR}/event.resize.js\
+${SOURCE_DIR}/dom.closest.js\
+${SOURCE_DIR}/dom.cookie.js\
+${SOURCE_DIR}/dom.compare.js\
+${SOURCE_DIR}/dom.cur_styles.js\
+${SOURCE_DIR}/dom.dimensions.js\
+${SOURCE_DIR}/dom.range.js\
+${SOURCE_DIR}/dom.route.js\
+${SOURCE_DIR}/dom.within.js\
+${SOURCE_DIR}/class.js\
+${SOURCE_DIR}/controller.js\
+${SOURCE_DIR}/controller.route.js\
+${SOURCE_DIR}/view.js\
+${SOURCE_DIR}/view.ejs.js
 
 all:
-	./js jquery/buildModule.js
+	./js jquery/buildScripts.js
 
-	mkdir -p ${DEVELOPMENT_DIR}/mvc
-	mkdir -p ${PRODUCTION_DIR}/mvc
+	rm -fr ${DEVELOPMENT_DIR}/mvc
+	rm -fr ${PRODUCTION_DIR}/mvc
 
-	$(foreach MODULE,$(MODULES), \
-		cat ${SOURCE_DIR}/$(MODULE).js | ${RESOLVE_NAMESPACE} > ${DEVELOPMENT_DIR}/mvc/$(MODULE).js;${\n} \
-		${UGLIFYJS} ${DEVELOPMENT_DIR}/mvc/$(MODULE).js > ${PRODUCTION_DIR}/mvc/$(MODULE).js;${\n} \
-    )
+	cat ${MODULES} | ${RESOLVE_NAMESPACE} > ${DEVELOPMENT_DIR}/mvc.js.raw
+	${WRAP} -c ${DEVELOPMENT_DIR}/mvc.js.raw > ${DEVELOPMENT_DIR}/mvc.js
+	${UGLIFYJS} ${DEVELOPMENT_DIR}/mvc.js > ${PRODUCTION_DIR}/mvc.js
+
+	rm -fr ${DEVELOPMENT_DIR}/mvc.js.raw
 
 	@@echo "Module mvc build complete."
