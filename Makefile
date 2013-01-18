@@ -16,7 +16,6 @@ ${SOURCE_DIR}/dom.closest.js\
 ${SOURCE_DIR}/dom.cookie.js\
 ${SOURCE_DIR}/dom.compare.js\
 ${SOURCE_DIR}/dom.cur_styles.js\
-${SOURCE_DIR}/dom.dimensions.js\
 ${SOURCE_DIR}/dom.range.js\
 ${SOURCE_DIR}/dom.within.js\
 ${SOURCE_DIR}/class.js\
