@@ -1,41 +1,34 @@
+all: build join-script-files resolve-namespace wrap-script minify-script
+
 include ../../build/modules.mk
 
-SOURCE_DIR = jquery/dist/modules/mvc
+MODULE = mvc
 
-MODULES = ${SOURCE_DIR}/lang.string.js\
-${SOURCE_DIR}/lang.string.rsplit.js\
-${SOURCE_DIR}/lang.string.deparam.js\
-${SOURCE_DIR}/event.default.js\
-${SOURCE_DIR}/event.destroyed.js\
-${SOURCE_DIR}/event.hashchange.js\
-${SOURCE_DIR}/event.key.js\
-${SOURCE_DIR}/event.livehack.js\
-${SOURCE_DIR}/event.pause.js\
-${SOURCE_DIR}/event.resize.js\
-${SOURCE_DIR}/dom.closest.js\
-${SOURCE_DIR}/dom.cookie.js\
-${SOURCE_DIR}/dom.compare.js\
-${SOURCE_DIR}/dom.cur_styles.js\
-${SOURCE_DIR}/dom.range.js\
-${SOURCE_DIR}/dom.within.js\
-${SOURCE_DIR}/class.js\
-${SOURCE_DIR}/controller.js\
-${SOURCE_DIR}/controller.route.js\
-${SOURCE_DIR}/view.js\
-${SOURCE_DIR}/view.ejs.js\
-${SOURCE_DIR}/lang.observe.js\
-${SOURCE_DIR}/dom.route.js
+SOURCE_SCRIPT_FOLDER = jquery/dist/modules/mvc
 
-all:
+SOURCE_SCRIPT_FILES = ${SOURCE_SCRIPT_FOLDER}/lang.string.js\
+${SOURCE_SCRIPT_FOLDER}/lang.string.rsplit.js\
+${SOURCE_SCRIPT_FOLDER}/lang.string.deparam.js\
+${SOURCE_SCRIPT_FOLDER}/event.default.js\
+${SOURCE_SCRIPT_FOLDER}/event.destroyed.js\
+${SOURCE_SCRIPT_FOLDER}/event.hashchange.js\
+${SOURCE_SCRIPT_FOLDER}/event.key.js\
+${SOURCE_SCRIPT_FOLDER}/event.livehack.js\
+${SOURCE_SCRIPT_FOLDER}/event.pause.js\
+${SOURCE_SCRIPT_FOLDER}/event.resize.js\
+${SOURCE_SCRIPT_FOLDER}/dom.closest.js\
+${SOURCE_SCRIPT_FOLDER}/dom.cookie.js\
+${SOURCE_SCRIPT_FOLDER}/dom.compare.js\
+${SOURCE_SCRIPT_FOLDER}/dom.cur_styles.js\
+${SOURCE_SCRIPT_FOLDER}/dom.range.js\
+${SOURCE_SCRIPT_FOLDER}/dom.within.js\
+${SOURCE_SCRIPT_FOLDER}/class.js\
+${SOURCE_SCRIPT_FOLDER}/controller.js\
+${SOURCE_SCRIPT_FOLDER}/controller.route.js\
+${SOURCE_SCRIPT_FOLDER}/view.js\
+${SOURCE_SCRIPT_FOLDER}/view.ejs.js\
+${SOURCE_SCRIPT_FOLDER}/lang.observe.js\
+${SOURCE_SCRIPT_FOLDER}/dom.route.js
+
+build:
 	./js jquery/buildScripts.js
-
-	rm -fr ${DEVELOPMENT_DIR}/mvc
-	rm -fr ${PRODUCTION_DIR}/mvc
-
-	cat ${MODULES} | ${RESOLVE_NAMESPACE} > ${DEVELOPMENT_DIR}/mvc.js.raw
-	${WRAP} -c ${DEVELOPMENT_DIR}/mvc.js.raw > ${DEVELOPMENT_DIR}/mvc.js
-	${UGLIFYJS} ${DEVELOPMENT_DIR}/mvc.js > ${PRODUCTION_DIR}/mvc.js
-
-	rm -fr ${DEVELOPMENT_DIR}/mvc.js.raw
-
-	@@echo "Module mvc build complete."
