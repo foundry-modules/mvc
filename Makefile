@@ -24,11 +24,9 @@ ${SOURCE_SCRIPT_FOLDER}/dom.range.js\
 ${SOURCE_SCRIPT_FOLDER}/dom.within.js\
 ${SOURCE_SCRIPT_FOLDER}/class.js\
 ${SOURCE_SCRIPT_FOLDER}/controller.js\
-${SOURCE_SCRIPT_FOLDER}/controller.route.js\
 ${SOURCE_SCRIPT_FOLDER}/view.js\
 ${SOURCE_SCRIPT_FOLDER}/view.ejs.js\
-${SOURCE_SCRIPT_FOLDER}/lang.observe.js\
-${SOURCE_SCRIPT_FOLDER}/dom.route.js
+${SOURCE_SCRIPT_FOLDER}/lang.observe.js
 
 build:
 	./js jquery/buildScripts.js
