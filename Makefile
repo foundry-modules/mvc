@@ -16,6 +16,7 @@ ${SOURCE_SCRIPT_FOLDER}/dom.within.js\
 ${SOURCE_SCRIPT_FOLDER}/dom.compare.js\
 ${SOURCE_SCRIPT_FOLDER}/event.default.js\
 ${SOURCE_SCRIPT_FOLDER}/event.destroyed.js\
+${SOURCE_SCRIPT_FOLDER}/event.livehack.js\
 ${SOURCE_SCRIPT_FOLDER}/event.drag.js\
 ${SOURCE_SCRIPT_FOLDER}/event.drop.js\
 ${SOURCE_SCRIPT_FOLDER}/class.js\
