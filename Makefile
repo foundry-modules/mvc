@@ -18,6 +18,9 @@ ${SOURCE_SCRIPT_FOLDER}/event.default.js\
 ${SOURCE_SCRIPT_FOLDER}/event.destroyed.js\
 ${SOURCE_SCRIPT_FOLDER}/event.livehack.js\
 ${SOURCE_SCRIPT_FOLDER}/event.drag.js\
+${SOURCE_SCRIPT_FOLDER}/event.drag.limit.js\
+${SOURCE_SCRIPT_FOLDER}/event.drag.scroll.js\
+${SOURCE_SCRIPT_FOLDER}/event.drag.step.js\
 ${SOURCE_SCRIPT_FOLDER}/event.drop.js\
 ${SOURCE_SCRIPT_FOLDER}/class.js\
 ${SOURCE_SCRIPT_FOLDER}/controller.js\
