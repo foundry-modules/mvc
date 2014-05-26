@@ -9,19 +9,9 @@ SOURCE_SCRIPT_FOLDER = jquery/dist/modules/mvc
 SOURCE_SCRIPT_FILES = ${SOURCE_SCRIPT_FOLDER}/lang.string.js\
 ${SOURCE_SCRIPT_FOLDER}/lang.string.rsplit.js\
 ${SOURCE_SCRIPT_FOLDER}/lang.string.deparam.js\
-${SOURCE_SCRIPT_FOLDER}/lang.vector.js\
+${SOURCE_SCRIPT_FOLDER}/event.destroyed.js\
 ${SOURCE_SCRIPT_FOLDER}/dom.closest.js\
 ${SOURCE_SCRIPT_FOLDER}/dom.cookie.js\
-${SOURCE_SCRIPT_FOLDER}/dom.within.js\
-${SOURCE_SCRIPT_FOLDER}/dom.compare.js\
-${SOURCE_SCRIPT_FOLDER}/event.default.js\
-${SOURCE_SCRIPT_FOLDER}/event.destroyed.js\
-${SOURCE_SCRIPT_FOLDER}/event.livehack.js\
-${SOURCE_SCRIPT_FOLDER}/event.drag.js\
-${SOURCE_SCRIPT_FOLDER}/event.drag.limit.js\
-${SOURCE_SCRIPT_FOLDER}/event.drag.scroll.js\
-${SOURCE_SCRIPT_FOLDER}/event.drag.step.js\
-${SOURCE_SCRIPT_FOLDER}/event.drop.js\
 ${SOURCE_SCRIPT_FOLDER}/class.js\
 ${SOURCE_SCRIPT_FOLDER}/controller.js\
 ${SOURCE_SCRIPT_FOLDER}/view.js\
