@@ -10,7 +10,6 @@ SOURCE_SCRIPT_FILES = ${SOURCE_SCRIPT_FOLDER}/lang.string.js\
 ${SOURCE_SCRIPT_FOLDER}/lang.string.rsplit.js\
 ${SOURCE_SCRIPT_FOLDER}/lang.string.deparam.js\
 ${SOURCE_SCRIPT_FOLDER}/event.destroyed.js\
-${SOURCE_SCRIPT_FOLDER}/dom.closest.js\
 ${SOURCE_SCRIPT_FOLDER}/dom.cookie.js\
 ${SOURCE_SCRIPT_FOLDER}/class.js\
 ${SOURCE_SCRIPT_FOLDER}/controller.js\
